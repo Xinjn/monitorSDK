@@ -1,5 +1,5 @@
 {
-  "name": "monitorsdk",
+  "name": "sdk-monitor",
   "version": "1.0.2",
   "description": "",
   "main": "index.js",
