@@ -20,4 +20,4 @@ const monitor = {
 
 // 挂载全局
 window.monitor = monitor
-export { monitor }
+export default monitor
