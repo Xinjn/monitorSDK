@@ -16,7 +16,4 @@ function setConfig(options) {
   }
 }
 
-module.exports = {
-  config,
-  setConfig
-}
+export { config, setConfig }

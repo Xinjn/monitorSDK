@@ -10,9 +10,8 @@
   2.1 在回调函数中用第一点得到的数据算出页面访问深度和停留时长。
   2.2 当用户滚动页面到某一点时，停下继续观看页面。这时记录当前时间、scrollTop 值、页面可视高度、页面总高度。
  */
-
-const { getUUID, onBeforeunload, executeAfterLoad, getPageURL } = require('../utils/index')
-const { report, lazyReportCache } = require('../utils/report')
+import { getUUID, onBeforeunload, executeAfterLoad, getPageURL } from '../utils/index.js'
+import { report, lazyReportCache } from '../utils/report.js'
 
 let timer // 定时器
 let hasReport = false // 是否上报，默认不上报
@@ -86,6 +85,4 @@ function pageAccessHeight() {
   })
 }
 
-module.exports = {
-  pageAccessHeight
-}
+export { pageAccessHeight }

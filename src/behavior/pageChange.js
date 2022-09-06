@@ -1,5 +1,5 @@
-const { lazyReportCache } = require('../utils/report')
-const { getPageURL } = require('../utils/index')
+import { lazyReportCache } from '../utils/report.js'
+import { getPageURL, getUUID } from '../utils/index.js'
 
 function pageChange() {
   // popstate
@@ -15,8 +15,8 @@ function pageChange() {
         to,
         type: 'behavior',
         subType: 'popstate',
-        startTime: performance.now()
-        // uuid: getUUID()
+        startTime: performance.now(),
+        uuid: getUUID()
       })
 
       from = to
@@ -47,6 +47,4 @@ function pageChange() {
   )
 }
 
-module.exports = {
-  pageChange
-}
+export { pageChange }

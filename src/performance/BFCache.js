@@ -1,9 +1,9 @@
 /*
 bfcache 是一种内存缓存，它会将整个页面保存在内存中。当用户返回时可以马上看到整个页面，而不用再次刷新。
 */
-const { isSupportPerformanceObserver } = require('../utils/observer')
-const { onBFCacheRestore, getPageURL } = require('../utils/index')
-const { lazyReportCache } = require('../utils/report')
+import { onBFCacheRestore, getPageURL } from '../utils/index.js'
+import { isSupportPerformanceObserver } from '../utils/observer.js'
+import { lazyReportCache } from '../utils/report.js'
 
 function BFCache() {
   if (!isSupportPerformanceObserver()) return
@@ -47,6 +47,4 @@ function BFCache() {
   })
 }
 
-module.exports = {
-  BFCache
-}
+export { BFCache }

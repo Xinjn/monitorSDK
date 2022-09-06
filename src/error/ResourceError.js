@@ -1,8 +1,8 @@
 /*
 使用 addEventListener() 监听 error 事件，可以捕获到资源加载失败错误。
 */
-const { getPageURL } = require('../utils/index')
-const { lazyReportCache } = require('../utils/report')
+import { lazyReportCache } from '../utils/report.js'
+import { getPageURL } from '../utils/index.js'
 
 function ResourceError() {
   // 捕获资源加载失败错误 js css img...
@@ -30,6 +30,4 @@ function ResourceError() {
   )
 }
 
-module.exports = {
-  ResourceError
-}
+export { ResourceError }

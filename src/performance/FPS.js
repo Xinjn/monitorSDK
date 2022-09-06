@@ -1,8 +1,7 @@
 /*
  */
-
-const { deepClone } = require('../utils/index')
-const { report } = require('../utils/report')
+import { deepClone } from '../utils/index.js'
+import { report } from '../utils/report.js'
 
 const next = window.requestAnimationFrame
   ? requestAnimationFrame
@@ -64,6 +63,4 @@ function isBlocking(fpsList, below = 20, last = 3) {
   return false
 }
 
-module.exports = {
-  FPS
-}
+export { FPS }

@@ -6,9 +6,9 @@
 3. 将最后一个 DOM 元素的绘制时间和首屏中所有加载的图片时间作对比，将最大值作为首屏渲染时间。
 */
 
-const { getPageURL, executeAfterLoad, onBFCacheRestore } = require('../utils/index')
-const { LCP } = require('./LCP')
-const { lazyReportCache } = require('../utils/report')
+import { getPageURL, executeAfterLoad, onBFCacheRestore } from '../utils/index.js'
+import { LCP } from './LCP.js'
+import { lazyReportCache } from '../utils/report.js'
 
 let isOnLoaded = false
 executeAfterLoad(() => {

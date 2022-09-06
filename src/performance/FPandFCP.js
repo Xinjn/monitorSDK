@@ -2,9 +2,9 @@
  * FP(first-paint)，从页面加载开始到第一个像素绘制到屏幕上的时间。
  * 其实把 FP 理解成白屏时间也是没问题的。
  */
-const { getPageURL } = require('../utils/index')
-const { isSupportPerformanceObserver } = require('../utils/observer')
-const { lazyReportCache } = require('../utils/report')
+import { getPageURL } from '../utils/index.js'
+import { isSupportPerformanceObserver } from '../utils/observer.js'
+import { lazyReportCache } from '../utils/report.js'
 
 function FPandFCP() {
   // 检测 PerformanceObserver 方法
@@ -42,7 +42,4 @@ function FPandFCP() {
   // 浏览器往返缓存 BFC
   // onBFCacheRestore()
 }
-
-module.exports = {
-  FPandFCP
-}
+export { FPandFCP }

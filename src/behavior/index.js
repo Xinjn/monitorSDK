@@ -1,8 +1,8 @@
-const { onClick } = require('./onClick')
-const { pv } = require('./pv')
-const { pageChange } = require('./pageChange')
-const { pageAccessDuration } = require('./pageAccessDuration')
-const { pageAccessHeight } = require('./pageAccessHeight')
+import { onClick } from './onClick.js'
+import { pv } from './pv.js'
+import { pageChange } from './pageChange.js'
+import { pageAccessDuration } from './pageAccessDuration.js'
+import { pageAccessHeight } from './pageAccessHeight.js'
 
 const behavior = {
   onClick: () => onClick(), // 用户点击
@@ -12,6 +12,4 @@ const behavior = {
   pageAccessHeight: () => pageAccessHeight() // 页面访问深度
 }
 
-module.exports = {
-  behavior
-}
+export { behavior }

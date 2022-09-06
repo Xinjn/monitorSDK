@@ -13,10 +13,9 @@
 1. 先缓存上报数据，缓存到一定数量后，利用 requestIdleCallback/setTimeout 延时上报。
 2. 在页面离开时统一将未上报的数据进行上报。
 */
-
-const { addCache, getCache, clearCache } = require('../utils/cache')
-const { generateUniqueID } = require('../utils/index')
-const { config } = require('../config')
+import { addCache, getCache, clearCache } from './cache.js'
+import { generateUniqueID } from './index.js'
+import { config } from '../config.js'
 
 // 判断浏览器是否存在 sendBeacon 属性
 function isSupportSendBeacon() {
@@ -81,7 +80,7 @@ function lazyReportCache(data, timeout = 3000) {
 
   // 防抖
   clearTimeout(timer)
-  time = setTimeout(() => {
+  timer = setTimeout(() => {
     // 优先获取内存中 data
     const data = getCache()
     if (data.length) {
@@ -92,7 +91,4 @@ function lazyReportCache(data, timeout = 3000) {
   }, timeout)
 }
 
-module.exports = {
-  report,
-  lazyReportCache
-}
+export { report, lazyReportCache }

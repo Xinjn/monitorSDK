@@ -2,7 +2,7 @@
 如何判断 XML 请求是否成功？可以根据他的状态码是否在 200~299 之间。如果在，那就是成功，否则失败。
 */
 
-const { lazyReportCache } = require('../utils/report')
+import { lazyReportCache } from '../utils/report.js'
 
 const originalProto = XMLHttpRequest.prototype
 const originalOpen = originalProto.open
@@ -45,6 +45,4 @@ function InterfaceXHR() {
   }
 }
 
-module.exports = {
-  InterfaceXHR
-}
+export { InterfaceXHR }

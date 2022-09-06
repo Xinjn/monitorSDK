@@ -6,9 +6,10 @@ CLS(layout-shift)，从页面加载开始和其生命周期状态变为隐藏期
 
 取所有会话窗口中的最大值:这种方式是目前最优的计算方式，每次只取所有会话窗口的最大值，用来反映页面布局偏移的最差情况。
  */
-const { getPageURL, deepClone } = require('../utils/index')
-const { isSupportPerformanceObserver } = require('../utils/observer')
-const { lazyReportCache } = require('../utils/report')
+
+import { getPageURL, deepClone } from '../utils/index.js'
+import { isSupportPerformanceObserver } from '../utils/observer.js'
+import { lazyReportCache } from '../utils/report.js'
 
 function formatCLSEntry(entry) {
   const result = entry.toJSON()
@@ -67,6 +68,4 @@ function CLS() {
   observer.observe({ type: 'layout-shift', buffered: true })
 }
 
-module.exports = {
-  CLS
-}
+export { CLS }

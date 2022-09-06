@@ -1,7 +1,7 @@
-const { ConsoleError } = require('./ConsoleError')
-const { ResourceError } = require('./ResourceError')
-const { JsError } = require('./JsError')
-const { PromiseError } = require('./PromiseError')
+import { ConsoleError } from './ConsoleError.js'
+import { ResourceError } from './ResourceError.js'
+import { JsError } from './JsError.js'
+import { PromiseError } from './PromiseError.js'
 
 const error = {
   ConsoleError: () => ConsoleError(), // 控制台报错
@@ -10,6 +10,4 @@ const error = {
   PromiseError: () => PromiseError() // PromiseError 错误
 }
 
-module.exports = {
-  error
-}
+export { error }

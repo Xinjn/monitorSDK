@@ -1,10 +1,10 @@
-const { setConfig } = require('./config')
+import { setConfig } from './config.js'
 // 行为监控
-const { behavior } = require('./behavior/index')
+import { behavior } from './behavior/index.js'
 // 性能监听
-const { performance } = require('./performance/index')
+import { performance } from './performance/index.js'
 // 错误监听
-const { error } = require('./error/index')
+import { error } from './error/index.js'
 
 const monitor = {
   init(option = {}) {
@@ -20,4 +20,4 @@ const monitor = {
 
 // 挂载全局
 window.monitor = monitor
-// export default monitor
+export { monitor }

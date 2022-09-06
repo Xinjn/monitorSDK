@@ -2,7 +2,7 @@
 对于 fetch，可以根据返回数据中的的 ok 字段判断请求是否成功，如果为 true 则请求成功，否则失败。
 */
 
-const { lazyReportCache } = require('../utils/report')
+import { lazyReportCache } from '../utils/report.js'
 
 const originalFetch = window.fetch
 
@@ -43,6 +43,4 @@ function InterfaceFetch() {
   }
 }
 
-module.exports = {
-  InterfaceFetch
-}
+export { InterfaceFetch }

@@ -3,6 +3,4 @@ function isSupportPerformanceObserver() {
   return !!window.PerformanceObserver
 }
 
-module.exports = {
-  isSupportPerformanceObserver
-}
+export { isSupportPerformanceObserver }

@@ -130,13 +130,4 @@ function onBFCacheRestore(callback) {
   )
 }
 
-module.exports = {
-  getUUID,
-  generateUniqueID,
-  getPageURL,
-  onBeforeunload,
-  onHidden,
-  deepClone,
-  executeAfterLoad,
-  onBFCacheRestore
-}
+export { getUUID, generateUniqueID, getPageURL, onBeforeunload, onHidden, deepClone, executeAfterLoad, onBFCacheRestore }

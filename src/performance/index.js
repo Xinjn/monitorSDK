@@ -1,12 +1,12 @@
-const { FPandFCP } = require('./FPandFCP')
-const { LCP } = require('./LCP')
-const { CLS } = require('./CLS')
-const { Load } = require('./Load')
-const { InterfaceXHR } = require('./InterfaceXHR')
-const { InterfaceFetch } = require('./InterfaceFetch')
-const { ResourceLoadandCache } = require('./ResourceLoadandCache')
-const { BFCache } = require('./BFCache')
-const { FPS, isBlocking } = require('./FPS')
+import { FPandFCP } from './FPandFCP.js'
+import { LCP } from './LCP.js'
+import { CLS } from './CLS.js'
+import { Load } from './Load.js'
+import { InterfaceXHR } from './InterfaceXHR.js'
+import { InterfaceFetch } from './InterfaceFetch.js'
+import { ResourceLoadandCache } from './ResourceLoadandCache.js'
+import { BFCache } from './BFCache.js'
+import { FPS } from './FPS.js'
 
 const performance = {
   FPandFCP: () => FPandFCP(), // FPandFCP
@@ -21,6 +21,4 @@ const performance = {
   FPS: () => FPS() // 计算卡顿
 }
 
-module.exports = {
-  performance
-}
+export { performance }

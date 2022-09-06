@@ -1,9 +1,10 @@
 /*
 对于 fetch，可以根据返回数据中的的 ok 字段判断请求是否成功，如果为 true 则请求成功，否则失败。
 */
-const { isSupportPerformanceObserver } = require('../utils/observer')
-const { executeAfterLoad } = require('../utils/index')
-const { lazyReportCache } = require('../utils/report')
+
+import { executeAfterLoad } from '../utils/index.js'
+import { isSupportPerformanceObserver } from '../utils/observer.js'
+import { lazyReportCache } from '../utils/report.js'
 
 function ResourceLoadandCache() {
   executeAfterLoad(() => {
@@ -79,6 +80,4 @@ function isCache(entry) {
   return entry.transferSize === 0 || (entry.transferSize !== 0 && entry.encodedBodySize === 0)
 }
 
-module.exports = {
-  ResourceLoadandCache
-}
+export { ResourceLoadandCache }

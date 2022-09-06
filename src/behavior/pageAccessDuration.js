@@ -1,5 +1,5 @@
-const { report } = require('../utils/report')
-const { onBeforeunload } = require('../utils/index')
+import { report } from '../utils/report.js'
+import { onBeforeunload, getPageURL, getUUID } from '../utils/index.js'
 
 function pageAccessDuration() {
   onBeforeunload(() => {
@@ -7,15 +7,13 @@ function pageAccessDuration() {
       {
         type: 'behavior',
         subType: 'page-access-duration',
-        startTime: performance.now()
-        // pageURL: getPageURL(),
-        // uuid: getUUID()
+        startTime: performance.now(),
+        pageURL: getPageURL(),
+        uuid: getUUID()
       },
       true
     )
   })
 }
 
-module.exports = {
-  pageAccessDuration
-}
+export { pageAccessDuration }

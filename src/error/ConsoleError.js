@@ -1,8 +1,8 @@
 /*
 控制台报错
 */
-const { getPageURL } = require('../utils/index')
-const { lazyReportCache } = require('../utils/report')
+import { getPageURL } from '../utils/index.js'
+import { lazyReportCache } from '../utils/report.js'
 
 function ConsoleError() {
   const oldConsoleError = window.console.error
@@ -19,6 +19,4 @@ function ConsoleError() {
   }
 }
 
-module.exports = {
-  ConsoleError
-}
+export { ConsoleError }

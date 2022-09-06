@@ -1,7 +1,7 @@
 /*
 使用 window.onerror 可以监听 js 错误。
 */
-const { lazyReportCache } = require('../utils/report')
+import { lazyReportCache } from '../utils/report.js'
 
 function JsError() {
   // 监听 js 错误
@@ -19,6 +19,4 @@ function JsError() {
   }
 }
 
-module.exports = {
-  JsError
-}
+export { JsError }

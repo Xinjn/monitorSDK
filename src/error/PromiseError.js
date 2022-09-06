@@ -1,8 +1,8 @@
 /*
 使用 addEventListener() 监听 unhandledrejection 事件，可以捕获到未处理的 promise 错误。
 */
-const { getPageURL } = require('../utils/index')
-const { lazyReportCache } = require('../utils/report')
+import { lazyReportCache } from '../utils/report.js'
+import { getPageURL } from '../utils/index.js'
 
 function PromiseError() {
   // 监听 promise 错误 缺点是获取不到列数据
@@ -17,6 +17,4 @@ function PromiseError() {
   })
 }
 
-module.exports = {
-  PromiseError
-}
+export { PromiseError }

@@ -1,4 +1,4 @@
-const { deepClone } = require('./index')
+import { deepClone } from './index.js'
 
 // 缓存
 const cache = []
@@ -15,8 +15,4 @@ function clearCache() {
   cache.length = 0
 }
 
-module.exports = {
-  addCache,
-  getCache,
-  clearCache
-}
+export { addCache, getCache, clearCache }

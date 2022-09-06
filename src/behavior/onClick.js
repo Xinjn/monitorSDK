@@ -1,4 +1,4 @@
-const { lazyReportCache } = require('../utils/report')
+import { lazyReportCache } from '../utils/report.js'
 
 const events = ['mousedown', 'touchstart']
 /*
@@ -25,6 +25,4 @@ function onClick() {
   })
 }
 
-module.exports = {
-  onClick
-}
+export { onClick }
